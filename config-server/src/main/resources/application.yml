@@ -8,10 +8,11 @@ spring:
     config:
       server:
         git:
-          uri:
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8091/eureka,
-                  http://localhost:8092/eureka
+          uri: https://github.com/zhiming778/demo-eureka
+          username: zhimingweng778@gmail.com
+          password: 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
+          search-paths: config
+      discovery:
+        enabled: false
+
 

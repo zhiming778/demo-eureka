@@ -11,3 +11,8 @@ eureka:
 spring:
   application:
     name: client-caller
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
