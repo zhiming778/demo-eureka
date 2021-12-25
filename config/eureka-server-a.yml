@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: eureka-server-a
+
+server:
+  port: 8091
+
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${random.uuid}
+    lease-expiration-duration-in-seconds: 40
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+        defaultZone: http://localhost:8092/eureka/
+
+
+

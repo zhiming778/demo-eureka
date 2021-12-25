@@ -1,0 +1,13 @@
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8091/eureka/,
+                   http://localhost:8092/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    lease-expiration-duration-in-seconds: 40
+spring:
+  application:
+    name: client-caller

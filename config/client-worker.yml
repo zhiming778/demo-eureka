@@ -1,0 +1,15 @@
+
+spring:
+  application:
+    name: client-worker
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    lease-expiration-duration-in-seconds: 40
+    status-page-url-path: /info
+    health-check-url-path: /health
+  client:
+    service-url:
+      defaultZone: http://localhost:8091/eureka,
+                  http://localhost:8092/eureka
