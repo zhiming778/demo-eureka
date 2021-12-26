@@ -1,23 +1,29 @@
 server:
-  port: 8080
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8091/eureka/,
-                   http://localhost:8092/eureka/
-  instance:
-    instance-id: ${spring.application.name}:${random.uuid}
-    lease-expiration-duration-in-seconds: 40
+  port: 7777
 spring:
   application:
     name: client-caller
+  #  cloud:
+  #    config:
+  #      uri: http://localhost:8888
+  config:
+    import: "optional:configserver:"
+#logging:
+#  level:
+#    org: debug
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: "*"
   endpoint:
-    beans:
-      enabled: true
-    info:
-      enabled: true
+    health:
+      show-details: always
+
+info:
+  author:
+    Jimmy Ong
+  Phone:
+    123-456-7890
+  email:
+    jimmyOng007@gmail.com

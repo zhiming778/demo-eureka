@@ -8,9 +8,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.PostConstruct;
-import java.util.UUID;
-
 @SpringBootApplication
 @EnableHystrix
 public class ClientCallerApplication {
@@ -18,14 +15,20 @@ public class ClientCallerApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(ClientCallerApplication.class, args);
         RestTemplate restTemplate = applicationContext.getBean(RestTemplate.class);
-        new Caller(restTemplate).callAnother20Times();
+//        new Caller(restTemplate).callAnother20Times();
+        IngredientService client = new IngredientService(restTemplate);
+        client.getIngredientById();
+        client.getIngredientById();
+        client.getIngredientById();
+        client.getIngredientById();
+        client.getIngredientById();
+        client.getIngredientById();
     }
-
 
 
     @Bean
     @LoadBalanced
-    public RestTemplate getRestTemplate(){
+    public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
 }

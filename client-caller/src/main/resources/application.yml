@@ -1,18 +1,28 @@
 spring:
   application:
     name: client-caller
-  cloud:
-    config:
-      uri: http://localhost:8888
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
   config:
     import: "optional:configserver:"
 #logging:
 #  level:
 #    org: debug
-
 management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
   endpoint:
-    beans:
-      enabled: true
-    info:
-      enabled: true
+    health:
+      show-details: always
+server:
+  port: 7777
+info:
+  author:
+    Jimmy Ong
+  Phone:
+    123-456-7890
+  email:
+    jimmyOng007@gmail.com

@@ -4,4 +4,6 @@ server:
 spring:
   application:
     name: hystrix-dashboard
-
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
