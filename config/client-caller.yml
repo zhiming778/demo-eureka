@@ -3,14 +3,6 @@ server:
 spring:
   application:
     name: client-caller
-  #  cloud:
-  #    config:
-  #      uri: http://localhost:8888
-  config:
-    import: "optional:configserver:"
-#logging:
-#  level:
-#    org: debug
 management:
   endpoints:
     web:
