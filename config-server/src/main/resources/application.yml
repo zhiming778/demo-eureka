@@ -1,5 +1,5 @@
-server:
-  port: 8888
+
+
 
 spring:
   application:
@@ -14,5 +14,5 @@ spring:
           search-paths: config
       discovery:
         enabled: false
-
-
+server:
+  port: 8888

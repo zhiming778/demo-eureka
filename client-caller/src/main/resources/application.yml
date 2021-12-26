@@ -1,14 +1,9 @@
+server:
+  port: 7777
 spring:
   application:
     name: client-caller
-#  cloud:
-#    config:
-#      uri: http://localhost:8888
-  config:
-    import: "optional:configserver:"
-#logging:
-#  level:
-#    org: debug
+
 management:
   endpoints:
     web:
@@ -17,8 +12,7 @@ management:
   endpoint:
     health:
       show-details: always
-server:
-  port: 7777
+
 info:
   author:
     Jimmy Ong
