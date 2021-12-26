@@ -6,3 +6,13 @@ spring:
       uri: http://localhost:8888
   config:
     import: "optional:configserver:"
+#logging:
+#  level:
+#    org: debug
+
+management:
+  endpoint:
+    beans:
+      enabled: true
+    info:
+      enabled: true
